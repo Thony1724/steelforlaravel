@@ -35,12 +35,12 @@ Route::get('/proyectos', function () {
 })->name('/proyectos');
 
 Route::get('/test-mail', function () {
-    try {
-        Mail::raw('Prueba de correo desde Render', function ($msg) {
-            $msg->to('sagitario11169@gmail.com')->subject('Test SMTP Render');
-        });
-        return 'Correo enviado sin errores aparentes.';
-    } catch (\Exception $e) {
-        return 'ERROR: ' . $e->getMessage();
-    }
+    return [
+        'mailer' => config('mail.default'),
+        'host' => config('mail.mailers.smtp.host'),
+        'port' => config('mail.mailers.smtp.port'),
+        'username' => config('mail.mailers.smtp.username'),
+        'encryption' => config('mail.mailers.smtp.encryption'),
+    ];
+});
 });
