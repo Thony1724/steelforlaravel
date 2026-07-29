@@ -43,4 +43,3 @@ Route::get('/test-mail', function () {
         'encryption' => config('mail.mailers.smtp.encryption'),
     ];
 });
-});
