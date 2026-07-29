@@ -1,0 +1,107 @@
+
+    .page-hero {
+        padding: 160px 0 80px;
+        background: linear-gradient(135deg, #05101F 0%, #0D2D5E 60%, #112244 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .page-hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(rgba(37, 99, 168, .1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(37, 99, 168, .1) 1px, transparent 1px);
+        background-size: 60px 60px;
+    }
+
+    .page-hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .page-hero h1 {
+        font-family: var(--font-display);
+        font-size: clamp(3rem, 7vw, 6rem);
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 1;
+        color: var(--white);
+        letter-spacing: -.02em;
+    }
+
+    .page-hero h1 span {
+        color: var(--orange);
+    }
+
+    .page-breadcrumb {
+        font-family: var(--font-tech);
+        font-size: .85rem;
+        font-weight: 600;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, .5);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .page-breadcrumb a {
+        color: var(--orange);
+    }
+
+    .contacto-page {
+        padding: 100px 0;
+        background: var(--black);
+        position: relative;
+        overflow: hidden;
+    }
+
+    @media (max-width: 767px) {
+        .contacto-page {
+            padding: 30px 0;
+        }
+    }
+
+    .contacto-page::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at 70% 40%, rgba(37, 99, 168, .12) 0%, transparent 60%);
+    }
+
+    .map-placeholder {
+        margin-top: 60px;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        aspect-ratio: 21/6;
+        background: linear-gradient(135deg, rgba(13, 45, 94, .8), rgba(26, 68, 128, .8));
+        border: 1px solid rgba(255, 255, 255, .08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 12px;
+        color: rgba(255, 255, 255, .3);
+        font-family: var(--font-tech);
+        font-size: .9rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+    }
+
+    .map-placeholder svg {
+        width: 48px;
+        height: 48px;
+        opacity: .3;
+    }
+
+    .map-placeholder a {
+        color: var(--orange);
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 8px;
+        font-size: .85rem;
+    }
