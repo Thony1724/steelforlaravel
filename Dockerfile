@@ -22,10 +22,6 @@ COPY --from=assets /var/www/public/build ./public/build
 
 RUN composer install --no-dev --optimize-autoloader
 
-RUN cp .env.example .env || true
-
-RUN php artisan key:generate --force
-
 RUN mkdir -p database && touch database/database.sqlite
 
 RUN php artisan migrate --force
