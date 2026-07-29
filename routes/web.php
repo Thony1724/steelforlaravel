@@ -37,7 +37,7 @@ Route::get('/proyectos', function () {
 Route::get('/test-mail', function () {
     try {
         Mail::raw('Prueba de correo desde Render', function ($msg) {
-            $msg->to('anthosagi17@gmail.com')->subject('Test SMTP Render');
+            $msg->to('SAGITARIO11169@gmail.com')->subject('Test SMTP Render');
         });
         return 'Correo enviado sin errores aparentes.';
     } catch (\Exception $e) {
