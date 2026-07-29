@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Mail;
 
 use App\Http\Controllers\JobApplicationController;
 Route::get('/', function () {
@@ -33,3 +33,14 @@ Route::get('/servicios', function () {
 Route::get('/proyectos', function () {
     return view('web.proyectos');
 })->name('/proyectos');
+
+Route::get('/test-mail', function () {
+    try {
+        Mail::raw('Prueba de correo desde Render', function ($msg) {
+            $msg->to('anthosagi17@gmail.com')->subject('Test SMTP Render');
+        });
+        return 'Correo enviado sin errores aparentes.';
+    } catch (\Exception $e) {
+        return 'ERROR: ' . $e->getMessage();
+    }
+});
